@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <script src="jquery-3.4.1.min (1).js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+           // $("div table").mouseover(function () {
+           //     $(this).css("background-color","red")
+          //  });
+
+           // $("div table").mouseout(function () {
+            //    $(this).css("background-color", "white")
+          //  });
+
+            $("div table tr").mouseover(function () {
+                $(this).css("background-color", "green")
+            });
+
+            $("div table tr").mouseout(function () {
+                $(this).css("background-color", "white")
+            });
+
+            $("input,textarea").focus(function () {
+                $(this).css("background-color", "blue")
+                $(this).css("color", "yellow")
+            });
+
+            $("input,textarea").blur(function () {
+                $(this).css("background-color", "white")
+                $(this).css("color", "black")
+                if($(this).val() == "")
+                {
+                    $("td").find("div").show("slow");
+                }
+                else {
+                    $("td").find("div").hide("slow");
+                }
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <div>
+        <table border="1" width="100%" cellpadding="5">
+            <tr>
+                <td>
+                    Enter Name:
+                </td>
+                <td>
+                    <input type="text" />
+                    <div style="color:orangered; display:none;">Name is Missing</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter Password:
+                </td>
+                <td>
+                    <input type="password" />
+                    <div style="color:orangered; display:none;">Password is Missing</div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter DOB:
+                </td>
+                <td>
+                    <input type="date" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter week:
+                </td>
+                <td>
+                    <input type="week" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter month:
+                </td>
+                <td>
+                    <input type="month" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter date:
+                </td>
+                <td>
+                    <input type="date" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter range:
+                </td>
+                <td>
+                    <input type="range" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter Gender:
+                </td>
+                <td>
+                    <input type="radio" name="gen" />Male
+                    <input type="radio" name="gen" />FeMale
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter color:
+                </td>
+                <td>
+                    <input type="color" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter FeedBack:
+                </td>
+                <td>
+                    <textarea rows="5" cols="15"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
