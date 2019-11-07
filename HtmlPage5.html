@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="jquery-3.4.1.min (1).js"></script>
+    
+    <style type="text/css">
+        div{
+            width:100%;
+            height:150px;
+        }
+        #first{
+            background-color:green;
+             
+        }
+        #second{
+            background-color:red;
+             
+        }
+        #third{
+            background-color:green;
+             
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnShow").click(function () {
+                $("#first").show("slow", function () {
+                    $("#second").show("slow", function () {
+                        $("#third").show("slow");
+                    });
+                });
+            });
+
+            $("#btnHide").click(function () {
+                $("#first").hide("slow", function () {
+                    $("#second").hide("slow", function () {
+                        $("#third").hide("slow");
+                    });
+                });
+            });
+
+            $("#fdIn").click(function () {
+                $("#first").fadeIn("slow", function () {
+                    $("#second").fadeIn("slow", function () {
+                        $("#third").fadeIn("slow");
+                    });
+                });
+            });
+
+            $("#fdOut").click(function () {
+                $("#first").fadeOut("slow", function () {
+                    $("#second").fadeOut("slow", function () {
+                        $("#third").fadeOut("slow");
+                    });
+                });
+            });
+
+            $("#slideIn").click(function () {
+                $("#first").slideUp("slow", function () {
+                    $("#second").slideUp("slow", function () {
+                        $("#third").slideUp("slow");
+                    });
+                });
+            });
+
+            $("#slideOut").click(function () {
+                $("#first").slideDown("slow", function () {
+                    $("#second").slideDown("slow", function () {
+                        $("#third").slideDown("slow");
+                    });
+                });
+            });
+
+            $("#rang").change(function () {
+                var value = $(this).val();
+                value = value / 100.0;
+                $("div").fadeTo("slow", value);
+            });
+
+            $("#dance").click(function () {
+                $("div").show("slow").hide("slow").slideDown("slow").slideUp("slow").fadeIn("slow").fadeOut("slow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="show" id="btnShow"/>
+    <input type="button" value="hide" id="btnHide" />
+
+    <input type="button" value="fadeIn" id="fdIn" />
+    <input type="button" value="fadeOut" id="fdOut" />
+
+    <input type="button" value="slideUp" id="slideIn" />
+    <input type="button" value="slideDown" id="slideOut" />
+    
+
+    <input type="range" id="rang"/>
+
+    <input type="button" id="dance" value="dance"/>
+    <div id="first"></div>
+    <div id="second"></div>
+    <div id="third"></div>
+</body>
+</html>
